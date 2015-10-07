@@ -110,7 +110,7 @@ Response response =         //для сохранения ответа
         Response response =
         given().
                 cookies(cookies).
-                param("filter", "10").
+                param("filter", "5").
                 when().
                 get("/issue/count").
                 then().
@@ -120,7 +120,7 @@ Response response =         //для сохранения ответа
 
         Integer issueNumber = Integer.parseInt(response.asString().replaceALl("[\\D]", ""));
         System.out.println(issueNumber);
-        assertThat(issueNumber, greaterThanOrEqualTo(10));
+        assertThat(issueNumber, greaterThanOrEqualTo(5));
     }
 
     private String countIssues() {
